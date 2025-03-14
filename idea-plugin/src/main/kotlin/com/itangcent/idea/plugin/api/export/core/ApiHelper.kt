@@ -14,15 +14,33 @@ import com.itangcent.intellij.jvm.element.ExplicitMethod
 @Singleton
 open class ApiHelper {
 
+    /**
+     * 注入docHelper
+     * Doc helper
+     */
     @Inject
     private val docHelper: DocHelper? = null
 
+    /**
+     * 用来处理@link这个标签的
+     * Doc parse helper
+     */
     @Inject
     protected val docParseHelper: DocParseHelper? = null
 
+    /**
+     * 用来处理规则计算的,可以自定义规则
+     * Rule computer
+     */
     @Inject
     protected val ruleComputer: RuleComputer? = null
 
+    /**
+     * 用来解析api的名字
+     *
+     * @param psiMethod
+     * @return
+     */
     fun nameOfApi(psiMethod: PsiMethod): String {
 
         val nameByRule = ruleComputer!!.computer(ClassExportRuleKeys.API_NAME, psiMethod)
@@ -41,6 +59,12 @@ open class ApiHelper {
         return psiMethod.name
     }
 
+    /**
+     * 获取方法中的属性
+     *
+     * @param method
+     * @return
+     */
     protected open fun findAttrOfMethod(method: ExplicitMethod): String? {
         val attrOfDocComment = docHelper!!.getAttrOfDocComment(method.psi())
 
@@ -49,6 +73,12 @@ open class ApiHelper {
         return attrOfDocComment.append(docByRule, "\n")
     }
 
+    /**
+     * 获取方法中的属性
+     *
+     * @param method
+     * @return
+     */
     protected open fun findAttrOfMethod(method: PsiMethod): String? {
         val attrOfDocComment = docHelper!!.getAttrOfDocComment(method)
 
@@ -57,6 +87,12 @@ open class ApiHelper {
         return attrOfDocComment.append(docByRule, "\n")
     }
 
+    /**
+     * 获取api的名称和属性
+     *
+     * @param explicitMethod
+     * @return
+     */
     fun nameAndAttrOfApi(explicitMethod: ExplicitMethod): Pair<String?, String?> {
         var name: String? = null
         var attr: String? = null
@@ -68,6 +104,13 @@ open class ApiHelper {
         return name to attr
     }
 
+    /**
+     * 获取api的名称和属性
+     *
+     * @param explicitMethod
+     * @param nameHandle
+     * @param attrHandle
+     */
     fun nameAndAttrOfApi(
         explicitMethod: ExplicitMethod, nameHandle: (String) -> Unit,
         attrHandle: (String) -> Unit
@@ -100,6 +143,13 @@ open class ApiHelper {
         }
     }
 
+    /**
+     * 获取api的名称和属性
+     *
+     * @param explicitMethod
+     * @param nameHandle
+     * @param attrHandle
+     */
     fun nameAndAttrOfApi(
         explicitMethod: PsiMethod, nameHandle: (String) -> Unit,
         attrHandle: (String) -> Unit

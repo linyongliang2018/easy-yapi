@@ -175,6 +175,9 @@ abstract class RequestClassExporter : ClassExporter {
         return ruleComputer.computer(ClassExportRuleKeys.IGNORE, psiElement) ?: false
     }
 
+    /**
+     * 超级重要的地方，生成发送到平台的请求
+     */
     private fun exportMethodApi(
         psiClass: PsiClass, method: ExplicitMethod,
         classExportContext: ClassExportContext,
@@ -195,6 +198,7 @@ abstract class RequestClassExporter : ClassExporter {
 
         processMethodParameters(methodExportContext, request)
 
+        // 非常重要，处理返回值的地方
         processResponse(methodExportContext, request)
 
         processCompleted(methodExportContext, request)

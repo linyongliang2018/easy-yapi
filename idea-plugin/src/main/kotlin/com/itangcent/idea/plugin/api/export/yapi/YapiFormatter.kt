@@ -539,6 +539,13 @@ open class YapiFormatter {
         return toJsonWithSchema(result, rootDesc)
     }
 
+    /**
+     * 生成jsonSchema的地方
+     *
+     * @param result
+     * @param rootDesc
+     * @return
+     */
     private fun toJsonWithSchema(result: HashMap<String, Any?>, rootDesc: String?): String {
         result["\$schema"] = "http://json-schema.org/draft-04/schema#"
         if (rootDesc != null) {

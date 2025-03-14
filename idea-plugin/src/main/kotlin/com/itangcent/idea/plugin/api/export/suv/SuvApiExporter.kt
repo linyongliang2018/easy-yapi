@@ -602,7 +602,7 @@ open class SuvApiExporter {
     }
 
     companion object {
-
+        // 选择框地方
         private val EXPORTER_CHANNELS: List<*> = listOf(
             ApiExporterWrapper(YapiApiExporterAdapter::class, "Yapi", Request::class, MethodDoc::class),
             ApiExporterWrapper(PostmanApiExporterAdapter::class, "Postman", Request::class),

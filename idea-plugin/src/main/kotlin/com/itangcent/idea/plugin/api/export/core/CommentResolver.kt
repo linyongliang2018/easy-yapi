@@ -18,6 +18,10 @@ import com.itangcent.intellij.logger.Logger
 import com.itangcent.intellij.psi.ClassRuleKeys
 import com.itangcent.utils.emptyIf
 
+/**
+ * 枚举解析器
+ *
+ */
 @Singleton
 class CommentResolver {
 

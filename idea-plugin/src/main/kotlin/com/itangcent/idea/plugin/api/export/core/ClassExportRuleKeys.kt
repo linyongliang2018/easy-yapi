@@ -2,6 +2,12 @@ package com.itangcent.idea.plugin.api.export.core
 
 import com.itangcent.intellij.config.rule.*
 
+/**
+ * 规则解析
+ * Class export rule keys
+ *
+ * @constructor Create empty Class export rule keys
+ */
 object ClassExportRuleKeys {
 
     val MODULE: RuleKey<String> = SimpleRuleKey(

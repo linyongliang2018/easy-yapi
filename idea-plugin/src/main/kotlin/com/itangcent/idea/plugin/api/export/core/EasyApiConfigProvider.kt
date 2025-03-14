@@ -4,6 +4,10 @@ import com.itangcent.intellij.config.LocalFileSearchConfigProvider
 import com.itangcent.order.Order
 import com.itangcent.order.Ordered
 
+/**
+ * 本地配置
+ *
+ */
 @Order(Ordered.HIGHEST_PRECEDENCE)
 class EasyApiConfigProvider : LocalFileSearchConfigProvider() {
 
