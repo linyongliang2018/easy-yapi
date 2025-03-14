@@ -109,6 +109,7 @@ intellij {
     pluginName.set("easy-yapi")
     sandboxDir.set("idea-sandbox")
     plugins.set(listOf("java", "maven", "gradle"))
+    downloadSources.set(true)
 }
 
 tasks {

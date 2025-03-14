@@ -12,6 +12,24 @@ subprojects {
     plugins.apply("jacoco")
 
     repositories {
+//        maven {
+//            setUrl("https://maven.aliyun.com/repository/public/")
+//        }
+//        maven {
+//            setUrl("https://maven.aliyun.com/repository/spring/")
+//        }
+//        maven {
+//            setUrl("https://maven.aliyun.com/repository/google/")
+//        }
+//        maven {
+//            setUrl("https://maven.aliyun.com/repository/gradle-plugin/")
+//        }
+//        maven {
+//            setUrl("https://maven.aliyun.com/repository/grails-core/")
+//        }
+//        maven {
+//            setUrl("https://maven.aliyun.com/repository/apache-snapshots/")
+//        }
         mavenCentral()
         maven("https://oss.sonatype.org/content/repositories/snapshots/")
     }
@@ -21,6 +39,25 @@ group = "com.itangcent"
 version = properties["plugin_version"]!!
 
 repositories {
+    // 依赖使用阿里云 maven 源
+//    maven {
+//        setUrl("https://maven.aliyun.com/repository/public/")
+//    }
+//    maven {
+//        setUrl("https://maven.aliyun.com/repository/spring/")
+//    }
+//    maven {
+//        setUrl("https://maven.aliyun.com/repository/google/")
+//    }
+//    maven {
+//        setUrl("https://maven.aliyun.com/repository/gradle-plugin/")
+//    }
+//    maven {
+//        setUrl("https://maven.aliyun.com/repository/grails-core/")
+//    }
+//    maven {
+//        setUrl("https://maven.aliyun.com/repository/apache-snapshots/")
+//    }
     mavenCentral()
 }
 
